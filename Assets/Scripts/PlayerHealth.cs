@@ -4,16 +4,22 @@ using UnityEngine UI;
 public class PlayerHealth : MonoBehaviour
 {
 
-    public int maxHealth = 100;
+    public int maxHealth = 10;
 
     public Slider slider;
-    
+
+    public int currentHealth;
+    public HealthBar healthBar;
+
+    public float damagePerSecond = 1f;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        currentHealth = maxHealth;
+
+
     }
 
     // Update is called once per frame
@@ -21,9 +27,9 @@ public class PlayerHealth : MonoBehaviour
     {
 
         if (healthBar == null) return;
-        if (healthBar.value <= 0f) return;
+        if (healthBar.value > maxHealth) value = maxHealth;
 
-        healthBar.value -= drainPerSecond * Time.deltaTime;
+        healthBar.value -= damagePerSecond * Time.deltaTime;
 
 
 

@@ -1,11 +1,12 @@
 using UnityEngine;
+using UnityEngine UI;
 
 public class EnemyHealth : MonoBehaviour
 {
 
     public Slider slider;
 
-    public int maxHealth = 100;
+    public int maxHealth = 10;
     public int currentHealth;
     public HealthBar heathBar;
 
